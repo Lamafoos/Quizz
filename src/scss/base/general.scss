@@ -1,0 +1,41 @@
+@use '../abstract/ally.scss';
+@use '../variables/base.scss';
+
+:root {
+  --vh: calc(var(--vh, 1vh) * 100);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: base.$font-family;
+  color: base.$font-color;
+  line-height: base.$line-height;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: base.$page-background-color;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  @include ally.focus {
+    outline: 2px solid clr(blue);
+  }
+
+  &:visited,
+  &:hover,
+  &:active {
+    text-decoration: none;
+    outline: 0;
+  }
+}

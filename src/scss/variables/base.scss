@@ -1,0 +1,19 @@
+/*
+BASE
+
+Only for base specific variables. That should be use in base styling.
+All variables should start with `$base-` prefix.
+*/
+
+@use '../variables/color.scss';
+
+// Font
+$font-family: 'OpenSans', serif;
+$line-height: 1.2;
+$font-color: color.$black;
+
+// Page
+$page-background-color: color.$neutral-20;
+
+// Container
+$container-max-width: 1200px;

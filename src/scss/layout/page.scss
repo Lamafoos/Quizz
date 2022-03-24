@@ -1,0 +1,9 @@
+@use '../abstract/layout.scss';
+
+#app {
+  @include layout.container;
+}
+
+.site-content {
+  padding-top: 4rem;
+}

@@ -1,0 +1,28 @@
+@use '../variables/color.scss';
+
+.button {
+  align-items: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: 500;
+  padding: 1rem 2rem;
+
+  &--primary {
+    background-color: color.$primary-100;
+    border-color: color.$primary-100;
+    color: color.$white;
+    transition: background-color 100ms ease-in-out,
+      border-color 100ms ease-in-out;
+
+    &:hover {
+      background-color: color.$primary-200;
+      border-color: color.$primary-200;
+    }
+
+    &:disabled {
+      background-color: color.$neutral-20;
+      border-color: color.$neutral-20;
+    }
+  }
+}

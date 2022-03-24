@@ -1,0 +1,38 @@
+@use '../variables/base.scss';
+@use '../variables/spacing.scss';
+@use './breakpoint.scss';
+
+@function spacing($amount) {
+  @if map-has-key(spacing.$spacing, $amount) {
+    @return map-get(spacing.$spacing, $amount);
+  } @else {
+    @error 'Key not found. There is 0-12 or a';
+  }
+}
+
+@mixin container {
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  @each $breakpoint, $padding in spacing.$content-padding {
+    @if $breakpoint == 'xs' {
+      padding-left: $padding;
+      padding-right: $padding;
+    } @else {
+      @include breakpoint.up($breakpoint) {
+        padding-left: $padding;
+        padding-right: $padding;
+      }
+    }
+  }
+}
+
+// Needs js function to work properly.
+@function vh($value) {
+  @if supports(css-vars) {
+    @return calc(var(--vh, 1vh) * $value);
+  } @else {
+    @return #{$value}vh;
+  }
+}

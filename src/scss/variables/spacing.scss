@@ -1,0 +1,37 @@
+/*
+SPACING
+
+Only for spacing specific variables.
+*/
+
+$spacing: (
+  1: 0.75rem,
+  2: 1rem,
+  3: 1.5rem,
+  4: 2rem,
+);
+
+$section-padding: (
+  x-small: (
+    xs: 3rem,
+  ),
+  small: (
+    xs: 4rem,
+  ),
+  medium: (
+    xs: 5.625rem,
+  ),
+  large: (
+    xs: 8.75rem,
+    md: 11.25rem,
+  ),
+);
+
+$content-padding: (
+  xs: 1.5rem,
+  sm: 1.5rem,
+  md: 1.5rem,
+  lg: 2.5rem,
+  xl: 2.5rem,
+  xxl: 2.5rem,
+);

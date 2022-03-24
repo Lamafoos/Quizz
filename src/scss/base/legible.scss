@@ -1,0 +1,35 @@
+@use '../abstract/typography.scss';
+
+// Headings
+.heading {
+}
+
+.headline {
+  @include typography.heading(1);
+  display: block;
+  padding-block: 2.25rem;
+
+  &--centered {
+    text-align: center;
+  }
+}
+
+.subheading {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.legible {
+  &--centered {
+    text-align: center;
+  }
+
+  & > *:where(:first-child) {
+    margin-top: 0;
+  }
+
+  p {
+    @include typography.body;
+    margin-top: 1.25rem;
+  }
+}

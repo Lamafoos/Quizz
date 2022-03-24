@@ -1,0 +1,23 @@
+@use '../variables/breakpoints';
+
+// Min width
+@mixin up($breakpoint) {
+  @if map-has-key(breakpoints.$breakpoints, $breakpoint) {
+    @media (min-width: map-get(breakpoints.$breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @error "#{$breakpoint} is not a breakpoint. Check available breakpoints.";
+  }
+}
+
+// Max width
+@mixin down($breakpoint) {
+  @if map-has-key(breakpoints.$breakpoints, $breakpoint) {
+    @media (max-width: calc(map-get(breakpoints.$breakpoints, $breakpoint) - 1px)) {
+      @content;
+    }
+  } @else {
+    @error "#{$breakpoint} is not a breakpoint. Check available breakpoints.";
+  }
+}
